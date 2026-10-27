@@ -10,13 +10,18 @@
   },
   "devDependencies": {
     "@types/react": "~19.3.0",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "react-native-harness": "1.6.0",
+    "@react-native-harness/platform-apple": "1.6.0",
+    "@react-native-harness/platform-android": "1.6.0"
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "test:ios": "react-native-harness --harnessRunner ios",
+    "test:android": "react-native-harness --harnessRunner android"
   },
-  "private": true
+  "private": true,
+  "overrides": {
+    "expo-file-system": "58.0.11"
+  }
 }
